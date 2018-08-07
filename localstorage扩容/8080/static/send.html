@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>8080 index2.html</h1>
+    <button onclick="send();">sss</button>
+    <iframe src="http://localhost:8081/receive.html" frameborder="0"></iframe>
+    <script>
+            function send(){
+                var frame = window.frames[0]
+                frame.postMessage('{"a":1,"b":2}','http://localhost:8081')
+            }
+    </script>
+</body>
+</html>
