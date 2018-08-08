@@ -1,0 +1,30 @@
+body{
+    background-image: url('./img/bg.jpg');
+    /* height: 90vh; */
+    /* transform-style:preserve-3d; */
+}
+
+.container{
+    margin: 0 auto;
+    width: 129px;  
+    perspective: 25rem;
+    
+} 
+.box{   
+    transform-style:preserve-3d;
+    height:100%;
+    position: relative;
+    width: 8.0625rem;
+    perspective-origin: 50% 50%;
+}
+.box>div{
+    position: absolute;
+    width: 8.0625rem;
+	height: 73.125rem;
+
+}
+
+@keyframes rotate{
+    from{}
+    100%{transform: rotateY(360deg)}
+}
