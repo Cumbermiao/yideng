@@ -1,12 +1,10 @@
 body{
     background-image: url('./img/bg.jpg');
-    /* height: 90vh; */
-    /* transform-style:preserve-3d; */
 }
 
 .container{
-    margin: 0 auto;
-    width: 129px;  
+    margin: 0 auto 0 auto;
+    width: 8.0625rem;  
     perspective: 25rem;
     
 } 
@@ -15,7 +13,7 @@ body{
     height:100%;
     position: relative;
     width: 8.0625rem;
-    perspective-origin: 50% 50%;
+    -webkit-perspective-origin: 50% 50%;
 }
 .box>div{
     position: absolute;
@@ -28,3 +26,27 @@ body{
     from{}
     100%{transform: rotateY(360deg)}
 }
+
+
+/*body{
+    background-image: url('../img/bg.jpg')
+}
+
+.container{
+    margin: 0 auto 0 auto;
+    width: 8.0625rem;
+    perspective: 25rem;
+}
+
+#box{
+    -webkit-transform-style: preserve-3d;
+    height: 100%;
+     -webkit-perspective-origin: 50% 50%;
+}
+
+#box > div{
+    position: absolute;
+    width: 8.0625rem;
+    height: 73.125rem;
+    
+}*/
