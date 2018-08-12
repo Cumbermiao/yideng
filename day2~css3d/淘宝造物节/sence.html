@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全景</title>
+</head>
+<style>
+	html,body{
+		margin: 0;
+		padding: 0;
+	}
+	main{
+		width:128px;
+		margin: 0 auto;
+		/*perspective: 154px;*/
+	}
+	.box{
+		margin: 0 auto;
+		position: relative;
+		transform-style: preserve-3d;
+		height: 100%;
+		/*perspective-origin: 50% 50%;	*/
+		/*transform: rotateX(80deg);*/
+
+		/*animation: rotate 20s linear 2; */
+	}
+	.item{
+		position: absolute;
+		font-size: 20px;
+		background-color:rgba(21,21,12,0.2);
+	}
+	@keyframes rotate{
+		from{}
+		to{transform: rotateY(360deg);}
+	}
+</style>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+	<main>
+		<div class="box">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+			<div class="item">7</div>
+			<div class="item">8</div>
+			<!-- <div class="item">9</div>
+			<div class="item">10</div> -->
+		</div>
+	</main>
+</body>
+<script>
+	var imgWidth =1024 ,imgHeight=640;
+
+	var div = $('.item'),len = div.length
+	var angle = 360/div.length,itemWidth = imgWidth/len;
+	var dis = Math.round(itemWidth/2/Math.tan(Math.PI*angle/360))-1
+	// var dis = 510
+	var url = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534006712277&di=d249df1fd255b40208ab5a8fd0107bdc&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F17%2F19%2F64%2F17S58PICgf8_1024.jpg'
+
+	$('.box').css({
+		width:`${itemWidth}px`,
+		height:`${imgHeight}px`,
+	})
+	for(var i=0;i<div.length;i++){
+		$('.item').eq(i).css({
+			width:`${itemWidth}px`,
+			height:`${imgHeight}px`,
+			transform:`rotateY(${angle*i}deg)  translateZ(${dis}px)` ,
+			// background:`url('${url}') no-repeat -${itemWidth*i}px 0`,
+		})
+	}
+	$('main').css({
+		"perspective":`${dis}px`
+	})
+	// window.addEventListener('deviceorientation',(data)=>{
+	// 	console.log(data)
+	// })
+</script>
+</html>
