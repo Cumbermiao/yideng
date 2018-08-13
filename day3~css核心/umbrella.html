@@ -4,18 +4,57 @@
 	<meta charset="UTF-8">
 	<title>雨伞</title>
 	<style>
-		.umbrella{
-			width: 160px;
-			height: 80px;
+		.div{
+			font-size:80px;
+			width: 2em;
+			height: 2em;
 			border: 2px solid #000;
-			border-radius: 80px 80px 0 0;
 			margin: 100px auto;
-			box-sizing: border-box;
-			background:  radial-gradient(200% 100% at bottom right, rgb(218, 165, 32) 49%, rgba(255, 215, 0, 0) 50%) 
+		}
+		.umbrella{
+			font-size:80px;
+			width: 2em;
+			height: 1em;
+			border: 2px solid #000;
+			margin: 100px auto;
+			border-radius: 80px 80px 0 0;
+			background:  radial-gradient(2em 10em at bottom center, rgb(218, 165, 32) 10%, rgba(255, 215, 0, 0) 10.1%),
+			radial-gradient(2em 5em at bottom center, lightblue 20% ,rgba(255, 215, 0, 0) 20.1%),
+			radial-gradient(2em 3.33em at bottom center, pink 30% ,rgba(255, 215, 0, 0) 30.1%),
+			radial-gradient(2em 2.5em at bottom center, lightblue 40% ,rgba(255, 215, 0, 0) 40.1%),
+			radial-gradient(2em 2em at bottom center, pink 50% ,rgba(255, 215, 0, 0) 50.1%);
+			position: relative;
+		}
+		.umbrella::before{
+			position: absolute;
+			content: "";
+			width: 2px;
+			height: 2px;
+			border: 2px solid #000;
+			border-radius: 50%;
+			top: -8px;
+			left:calc(50% - 2px);
+		}
+		.div{
+			background: radial-gradient(100% 100% at center center,red 50%,blue 50%)
+		}
+		.linear{
+			/*background: linear-gradient(0.25turn ,red,blue);*/
+
+			/*background: linear-gradient(60deg ,red 63%,transparent 63% ) 50% 20% / 0.5em .5em  no-repeat,
+			radial-gradient(.5em .5em at 50% 75%, lightblue 50%,transparent 50.1%) no-repeat;*/
+
+			/*background:linear-gradient(red,blue) 1em 20% / .5em .5em no-repeat,
+			linear-gradient(red,blue) 50% 80% / .5em .5em no-repeat;*/
+
+			background: radial-gradient(100% 100% at center , red 50% ,blue 50%) 100% 20% / .5em .5em no-repeat,
+			radial-gradient(100% 100% at center , red 50% ,blue 50%) 100% 80% / .5em .5em no-repeat;
 		}
 	</style>
 </head>
 <body>
 	<div class="umbrella"></div>
+	<div class="div"></div>
+	<div class="div linear"></div>
 </body>
 </html>
