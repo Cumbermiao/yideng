@@ -5,6 +5,7 @@
 
 - 根据以上的知识点，可以知道，一个雨伞的图案其实就是画 高相同、x的中心点相同、宽不同的 椭圆， 注意前面的渐变的颜色不会被后面的覆盖。
 
+
 ## background：<'background-color'> || <image> || <position> [ / <size> ]? || <repeat> || <attachment> || <origin> || <clip>
 
 - background 中 position 和 size 之间要使用 / 分割。
