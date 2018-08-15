@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html{
+        scroll-behavior: smooth;
+        overscroll-behavior: contain;
+    }
+    body{
+        overscroll-behavior: contain;
+    }
+    section{
+        position: fixed;
+        left: 50%;
+        top:0;
+        width: 200px;
+        height: 100px;
+        background: #fff;
+        overflow: auto;
+    }
+    section>a{
+        display: block;
+        height: 30px;
+    }
+    div{
+        height: 100vh;
+    }
+    .div2{
+        background: lightblue
+    }
+    .div3{
+        background: lightcoral
+    }
+    .div4{
+        background: lightcyan
+    }
+    </style>
+</head>
+<body>
+    <section>
+            <a href="#div1">div1</a>
+            <a href="#div2">div2</a>
+            <a href="#div3">div3</a>
+            <a href="#div4">div4</a>
+    </section>
+    <div id="div1" class="div1">1</div>
+    <div id="div2" class="div2">2</div>
+    <div id="div3" class="div3">3</div>
+    <div id="div4" class="div4">4</div>
+</body>
+</html>
