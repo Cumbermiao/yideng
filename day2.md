@@ -13,7 +13,7 @@
 
 ### 矩阵变换
 #### 2d矩阵 transform(a,b,c,d,e,f)
-- 对应的矩阵计算如下 ！[image](http://image.zhangxinxu.com/image/blog/201206/css-transforms-matrix5.gif)
+- 对应的矩阵计算如下 ![image](http://image.zhangxinxu.com/image/blog/201206/css-transforms-matrix5.gif)
 - 可以知道变换之后的 x 为 ax+cy+e , y 为 bx+dy+f。通过这个结果可以知道常见的transform可以通过矩阵实现。
 1. 位移 [1,0,0,1,x,y]:x,y为水平、垂直方向位移的距离。
 2. scale 缩放 [x,0,0,y,0,0]:x,y 为水平、垂直方向的缩放比例。
