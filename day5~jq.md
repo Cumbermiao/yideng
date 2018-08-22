@@ -19,9 +19,9 @@ jQuery.extend //添加到静态方法
 
 ```
 
-1. ie浏览器可以给undefined fu hi。
+1. ie浏览器可以给undefined 赋值。
 
-2. 实现js的chong ai,使用闭包
+2. 实现js的重载,使用闭包
 ```
 function addMethod(obj,name,fn){
     var old = object[name]
@@ -45,7 +45,7 @@ addMethod(people,'find',function(a,b){
 })
 ```
 3. 链式调用 return this；连贯接口：1,链式调用 2，命令查询媒体 3，参数映射
-4. js使用erjin hi
+4. js使用二进制
 ```
 var s[1,2]
 var length = s.length>>>0//向右补0
@@ -58,7 +58,7 @@ a||test2()
 //else test2()
 
 ```
-5. jquery 的选 e 器 si~~le
-6. hooks/勾 ~i/～i 典
-7. $.ready:DOMContentloaded
+5. jquery 的选择器 sizzle
+6. hooks/勾子/字典
+7. $.ready:DOMContentloaded事件，在dom和css渲染结束时触发。
 8. css穿透
