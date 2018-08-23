@@ -21,10 +21,11 @@ xs.slice(0,3)
 //输出结果相同
 ```
 ## 函子
-- 函子是函数式编程里面最重要的数据类型，也是基本的运算单位和功能单位
+- 函子是函数式编程里面最重要的数据类型，也是基本的运算单位和功能单位。
+- 函子首先他是一个容器，他有范畴， 特殊的在于他可以作用于范畴里每一个值，将一个容器转换成另一个容器。作用于每一个值就是靠的map方法。
 - 函数式编程的要点在于函子，一般情况下使用 of 方法生成一个函子，使用map生成一个使用fn处理过的函子。
 ```
-Class Functor{
+class Functor{
     constrouctor(val){
         this.value = val
     }
@@ -41,6 +42,15 @@ Functor.of(2).map(function(item)=>{
     return item+10
 })
 ```
+
+### Maybe 函子
+- Maybe函子用于处理函子传入的val为空，导致报错
+```
+class Maybe extends Functor{
+    map(f){
+        return this.value?this.of(f(this.value)):this.of(null)
+    }
+}
 
 ### 递归优化：尾递归
 - 递归会存储大量的变量，占用过多的cpu甚至导致栈溢出。
