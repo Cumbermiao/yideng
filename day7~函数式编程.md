@@ -35,6 +35,11 @@ Class Functor{
 Functor.of =function(val){
     return new Functor(val)
 }
+
+//使用
+Functor.of(2).map(function(item)=>{
+    return item+10
+})
 ```
 
 ### 递归优化：尾递归
