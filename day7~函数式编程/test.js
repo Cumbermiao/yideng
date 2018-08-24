@@ -20,15 +20,41 @@ Functor.of = function (val) {
 // })
 
 
-
-class Maybe extends Functor{
-    map(f){
-        console.log(this.value)
-        return this.value?Maybe.of(f(this.value)):Maybe.of(null)
+//Maybe
+class Maybe extends Functor {
+    map(f) {
+        return this.value ? Maybe.of(f(this.value)) : Maybe.of(null)
     }
 
 }
 
-Maybe.of(null).map(function(s){
-    return s.toUpperCase()
-})
+// Maybe.of(null).map(function(s){
+//     return s.toUpperCase()
+// })
+
+
+// Either  常用功能：1 if...else 判断 2 提供默认值 3 错误处理
+class Either extends Functor {
+    constructor(left, right) {
+        super()
+        this.left = left
+        this.right = right
+    }
+
+    map(f){
+        return this.right?Either.of(this.left,f(this.right)):Either.of(f(this.left),this.right)
+    }
+
+    static of(left,right){
+        return new Either(left,right)
+    }
+}
+
+//if...else
+// var add1 = function(x){
+//     return x+1
+// }
+// console.log(Either.of(1,10).map(add1))
+//错误判断
+
+

@@ -17,9 +17,27 @@
 var xs =[1,2,3,4,5]
 xs.slice(0,3)
 xs.slice(0,3)
-xs.slice(0,3)
 //输出结果相同
 ```
+#### 纯函数的主要应用之一就是缓存
+```
+// 简单实现momize
+var memoize = function(f) {
+    var cache = {};
+  
+    return function() {
+        console.log(cache,arguments)
+      var arg_str = JSON.stringify(arguments);
+      cache[arg_str] = cache[arg_str] || f.apply(f, arguments);
+      return cache[arg_str];
+    };
+  };
+  
+  var double = memoize(function(x){return 2*x})
+  var double4 = double(4)
+  var double42 = double(4)//再次执行该函数时，memoize中缓存了参数为4的结果，会从cache中取值。
+```
+#### 由于异步结果是不纯的，我们可以缓存异步的执行函数，将其变成纯函数。
 ## 函子
 - 函子是函数式编程里面最重要的数据类型，也是基本的运算单位和功能单位。
 - 函子首先他是一个容器，他有范畴， 特殊的在于他可以作用于范畴里每一个值，将一个容器转换成另一个容器。作用于每一个值就是靠的map方法。
