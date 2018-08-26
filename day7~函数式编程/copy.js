@@ -1,7 +1,7 @@
 
 
 (function () {
-
+    //判断window还是node
     var root = typeof self == 'object' && self.self === self && self ||
         typeof global == 'object' && global.global === global && global ||
         this || {};

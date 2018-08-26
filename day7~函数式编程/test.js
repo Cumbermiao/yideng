@@ -72,5 +72,28 @@ var isLastInStock = function(cars) {
     return _.prop('in_stock', last_car);
 };
 
-var isLastInStock = _.compose(_.prop('in_stock'),_.last)
-isLastInStock(cars)
+// var isLastInStock = _.compose(_.prop('in_stock'),_.last)
+// isLastInStock(cars)
+
+
+function ss(){
+    var a=1
+switch(a==null?3:a){
+    case 1:
+        return function(){
+            console.log(1111)
+        };
+    case 3:
+    return function(){
+        console.log(3333)
+    };
+    case 4:
+        return function(){
+            console.log(4444)
+        };
+    return function(){
+        console.log("其他")
+    };
+}
+}
+var res=ss()()
