@@ -20,14 +20,19 @@ Functor.of = function (val) {
 // })
 
 
-//Maybe
+//Maybe 对传入的参数判断
 class Maybe extends Functor {
     map(f) {
-        return this.value ? Maybe.of(f(this.value)) : Maybe.of(null)
+        return Maybe.isNothing() ? Maybe.of(null): Maybe.of(f(this.value)) 
     }
 
 }
-
+Maybe.isNothing = function(){
+    return (this.value==null||this.value==undefined)
+}
+Maybe.of= function(){
+    return new Maybe(this.value)
+}
 // Maybe.of(null).map(function(s){
 //     return s.toUpperCase()
 // })
@@ -58,3 +63,37 @@ class Either extends Functor {
 //错误判断
 
 
+// var check = age=> age>10
+// console.log(check(19))
+
+// 使用 _.compose() 重写下面这个函数。提示：_.prop() 是 curry 函数
+var isLastInStock = function(cars) {
+    var last_car = _.last(cars);
+    return _.prop('in_stock', last_car);
+};
+
+// var isLastInStock = _.compose(_.prop('in_stock'),_.last)
+// isLastInStock(cars)
+
+
+function ss(){
+    var a=1
+switch(a==null?3:a){
+    case 1:
+        return function(){
+            console.log(1111)
+        };
+    case 3:
+    return function(){
+        console.log(3333)
+    };
+    case 4:
+        return function(){
+            console.log(4444)
+        };
+    return function(){
+        console.log("其他")
+    };
+}
+}
+var res=ss()()
