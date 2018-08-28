@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont.css">
+    <style>
+    .button{
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #dcdfe6;
+        border-color: #dcdfe6;
+        color: #606266;
+        -webkit-appearance: none;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 12px 10px;
+        min-width: 90px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 4px;
+        position: relative;
+        top:50px;
+    }
+    .button:hover{
+        color: #409eff;
+        border-color: #c6e2ff;
+        background-color: #ecf5ff;
+    }
+    .button .tip{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        padding:4px;
+        border-radius: 50%;
+        background: red;
+        color:#fff;
+        right:-20px;
+        top:-20px;
+        font-size: 12px;
+        line-height: 1;
+    }
+  .iconfont{
+        animation: jump 0.618s 1
+    }
+    @keyframes jump{
+        0%{transform: translateY(0)}
+        25%{transform: translateY(30px)}
+        50%{transform: translateY(20px)}
+        100%{transform: translateY(5px)}
+    }
+    </style>
+</head>
+<!-- <script src="./index.js"></script> -->
+<script src="./system.js"></script>
+
+<body>
+    <div id="button"></div>
+    <i class="iconfont icon-thumb-up"></i>
+</body>
+<script>
+    SystemJS.import('./build/index.js').then((obj)=>{
+        // console.log('sss',obj)
+    })
+</script>
+<!-- <script>
+    var div = document.getElementById('button')
+    var press = new Thumb(div,10)
+    press.init()
+</script> -->
+</html>
