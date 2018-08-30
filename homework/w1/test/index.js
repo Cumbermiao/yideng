@@ -1,5 +1,4 @@
-import 'babel-polyfill'
-export class Press{
+class Press{
     constructor(button,count){
         this.count = count||0
         this.button = button
@@ -23,7 +22,7 @@ export class Press{
     }
 }
 
-export class Thumb extends Press{
+class Thumb extends Press{
     constructor(button,count,iconClass){
         super(button,count)
         this.iconClass = iconClass

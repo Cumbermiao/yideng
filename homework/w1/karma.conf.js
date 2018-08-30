@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Mon Aug 27 2018 20:37:29 GMT+0800 (CST)
+// Generated on Wed Aug 29 2018 21:46:28 GMT+0800 (CST)
 
 module.exports = function(config) {
   config.set({
@@ -49,7 +49,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
