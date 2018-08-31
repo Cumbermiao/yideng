@@ -1,5 +1,5 @@
 const timeout=ms=>{
-    new Promise((resolve)=>{
+    return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve()
         },ms)
@@ -34,10 +34,18 @@ const mergePromise = (arr) =>{
     }
 }
 
-
-mergePromise([ajax1, ajax2, ajax3])
+// mergePromise([ajax1, ajax2, ajax3])
 // .then(data => {
 // console.log("done");
 // console.log(data); // data 为 [1, 2, 3]
 // // 执⾏结果为： 1 2 3 done [1,2,3]
 // });
+
+function test1(){
+    var a='aaa'
+    return function(){
+        debugger
+        window.eval("")
+    }
+}
+test1()()
