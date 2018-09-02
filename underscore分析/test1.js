@@ -16,8 +16,30 @@ var words = function(str) {
 // console.log(strSplitWithWord)
 
 //1a 使用 `map` 创建一个新的 `words` 函数，使之能够操作字符串数组
-var arrWords = function(arr){
-    return arr.map(words)
-}
-var arrWords = _.compose(arrWords,words)
-var a1=words('')
+// var arrWords = function(arr){
+//     return arr.map(words)
+// }
+// var arrWords = _.compose(arrWords,words)
+// var a1=words('')
+
+//2 
+var shallowProperty = function (key) {
+    return function (obj) {
+        console.log(obj,arguments)
+        return obj == null ? void 0 : obj[key];
+    };
+};
+property = function (path) {
+    if (!_.isArray(path)) {
+        return shallowProperty(path);
+    }
+    return function (obj) {
+        return deepGet(obj, path);
+    };
+};
+pluck = function (obj, key) {
+    return obj.map(property(key));
+};
+
+var ages = pluck([{name:"plukname",age:12},{name:'jack',age:13},{name:"tom",age:21}],"age")
+console.log(ages)
