@@ -46,7 +46,14 @@ const _ = require('./underscore')
 // console.log(ages)
 
 //3 
-var list = [{name:'lsit',selected:false,visible:true},{name:'lsit2',selected:true,visible:true}]
-var ready = _.matches({selected: true, visible: true});
-var readyToGoList = _.filter(list, ready);
-console.log(readyToGoList)
+// var list = [{name:'lsit',selected:false,visible:true},{name:'lsit2',selected:true,visible:true}]
+// var ready = _.matches({selected: true, visible: true});
+// var readyToGoList = _.filter(list, ready);
+// console.log(readyToGoList)
+
+//4
+// var list =[10,123,32,13,33]
+// console.log(_.max(list,1232))
+
+//5
+console.log(_.sample([1, 2, 3, 4, 5, 6], 3))
