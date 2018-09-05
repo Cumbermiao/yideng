@@ -1,10 +1,11 @@
-const _ = require('./lodash')
+// const _ = require('./lodash')
+const _ = require('./underscore')
 
 
 //1 通过局部调用（partial apply）移除所有参数
-var words = function(str) {
-    return split(' ', str);
-  };
+// var words = function(str) {
+//     return split(' ', str);
+//   };
 
 
 // var split = function(str,splitword){
@@ -16,8 +17,36 @@ var words = function(str) {
 // console.log(strSplitWithWord)
 
 //1a 使用 `map` 创建一个新的 `words` 函数，使之能够操作字符串数组
-var arrWords = function(arr){
-    return arr.map(words)
-}
-var arrWords = _.compose(arrWords,words)
-var a1=words('')
+// var arrWords = function(arr){
+//     return arr.map(words)
+// }
+// var arrWords = _.compose(arrWords,words)
+// var a1=words('')
+
+//2 
+// var shallowProperty = function (key) {
+//     return function (obj) {
+//         console.log(obj,arguments)
+//         return obj == null ? void 0 : obj[key];
+//     };
+// };
+// property = function (path) {
+//     if (!_.isArray(path)) {
+//         return shallowProperty(path);
+//     }
+//     return function (obj) {
+//         return deepGet(obj, path);
+//     };
+// };
+// pluck = function (obj, key) {
+//     return obj.map(property(key));
+// };
+
+// var ages = pluck([{name:"plukname",age:12},{name:'jack',age:13},{name:"tom",age:21}],"age")
+// console.log(ages)
+
+//3 
+var list = [{name:'lsit',selected:false,visible:true},{name:'lsit2',selected:true,visible:true}]
+var ready = _.matches({selected: true, visible: true});
+var readyToGoList = _.filter(list, ready);
+console.log(readyToGoList)
