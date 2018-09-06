@@ -56,4 +56,8 @@ const _ = require('./underscore')
 // console.log(_.max(list,1232))
 
 //5
-console.log(_.sample([1, 2, 3, 4, 5, 6], 3))
+// console.log(_.sample([1, 2, 3, 4, 5, 6], 3))
+
+//6 
+var arr = [{name:'test1',age:1},{name:'test2',age:12,sex:'male'},{name:'test3',age:3},]
+console.log(_.pluck(arr))
