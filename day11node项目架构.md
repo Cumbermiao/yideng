@@ -38,7 +38,18 @@ cpu时钟周期： 1/cpu主频。
 - Scavenge：将内存分成from和to两块，将from里面存活的变量付给to，然后不断互换位置，发现被回收过的直接晋升。
 - 老生代使用的是Mark-Sweep&Mark-compat ：使用Mark-Sweep标记不用的内存（手动置null）并清除，此时会出现内存不连续的情况，使用Mark-compat 将内存右移合并。
 - v8 后续还引入了延迟处理，增量处理（防止GC的时候程序死掉），并计划引入标记处理。
+- v8 内存的栈大小 8M
 
 
-- mvc:yii
+### 项目架构（todo）
+- 传统的MVC框架 ： yii
+- .Net 多层架构，javaWeb 多层架构
+
+### pm2(todo）
+- pm2 是一个带有负载均衡的node应用的进程管理器。
+
+
+### 多线程（todo）
+
+### 服务器集群
 - pm2,nginx,lvs,
