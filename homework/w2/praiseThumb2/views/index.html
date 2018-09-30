@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block title %}My Page{% endblock %}
+{% block head %}
+{% parent %}
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/system.js"></script>
+{% endblock %}
+{% block content %}
+<div class="hand" id="thumb">
+    <div class="finger"></div>
+    <div class="finger"></div>
+    <div class="finger"></div>
+    <div class="finger"></div>
+    <div class="finger thumb"></div>
+    <div class="arm"></div>
+</div>
+<span class="hide" id="animation">+1</span>
+    <script>
+        window.add = function(x){
+            return x+1
+        }
+        SystemJS.config({
+            baseURL: '../js'
+        });
+        SystemJS.import('index.js').then(function (m) {
+            console.log(m); 
+            console.log(m.default);
+            $.extend({
+                thumb:m.default
+            })
+            callBack();
+        });
+        function callBack(){
+            var f=new $.thumb(0,$('#thumb'));
+            f.clickAction();
+        }
+    </script> F
+
+{% endblock %}
