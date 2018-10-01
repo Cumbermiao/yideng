@@ -1,0 +1,8 @@
+xmstart:启动xampp服务 sudo /opt/lampp/lampp start
+xmstop：关闭xampp服务
+
+
+### todo
+- 使用 source .bash_profile || .~/.bash_profile:设置 alias 会立即生效，但是不是永久
+
+wegt 命令：使用http协议 下载内容

@@ -19,3 +19,5 @@ app.use(serve(config.staticDir))
 app.listen(3001, () => {
     console.log('listen 3001')
 })
+
+module.exports = app

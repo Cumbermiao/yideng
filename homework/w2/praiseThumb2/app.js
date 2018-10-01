@@ -15,7 +15,6 @@ var render = require('koa-swig');
 var co = require('co');
 var controller = require('./controller/index');
 var config = require('./config/config');
-console.log(controller);
 
 var app = new _koa2.default();
 app.context.render = co.wrap(render({
@@ -27,6 +26,8 @@ app.context.render = co.wrap(render({
 controller.init(app, _koaSimpleRouter2.default);
 app.use(serve(config.staticDir));
 
-app.listen(3001, function () {
+app.listen(3002, function () {
     console.log('listen 3001');
 });
+
+module.exports = app;

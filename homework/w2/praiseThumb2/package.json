@@ -13,9 +13,14 @@
     "koa-static": "^5.0.0"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-preset-env": "^1.7.0",
     "co": "^4.6.0",
     "koa-simple-router": "^0.2.0",
-    "koa-swig": "^2.2.1"
+    "koa-swig": "^2.2.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "supertest": "^3.3.0"
   }
 }
