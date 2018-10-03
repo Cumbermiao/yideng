@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/jquery.js"></script>
     <script src="../js/system.js"></script>
+    <script src="../js/add.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 {% endblock %}
 {% block content %}
@@ -18,9 +19,6 @@
 </div>
 <span class="hide" id="animation">+1</span>
     <script>
-        window.add = function(x){
-            return x+1
-        }
         SystemJS.config({
             baseURL: '../js'
         });

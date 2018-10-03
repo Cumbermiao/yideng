@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Wed Aug 29 2018 21:46:28 GMT+0800 (CST)
+// Generated on Thu Sep 13 2018 17:23:38 GMT+0800 (中国标准时间)
 
 module.exports = function(config) {
   config.set({
@@ -14,8 +14,7 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-      "./js/add.js","./test/add.spec.js"
+    files: ['./test/index.spec.js','./public/scripts/addindex.js'
     ],
 
 
@@ -50,7 +49,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
@@ -60,7 +59,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
