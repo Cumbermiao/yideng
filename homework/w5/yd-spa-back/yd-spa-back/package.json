@@ -1,0 +1,37 @@
+{
+  "name": "yd-spa",
+  "version": "1.0.0",
+  "description": "京程一灯单页系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "dev": "webpack --mode development",
+    "dev:server": "webpack-dev-server --mode development",
+    "prod": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inline-manifest-webpack-plugin": "^4.0.2",
+    "lodash": "^4.17.11",
+    "lodash-es": "^4.17.11",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-bash-title": "0.0.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "set-iterm2-badge": "0.0.4",
+    "speed-measure-webpack-plugin": "^1.2.3",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.21.0",
+    "webpack-build-notifier": "^0.1.30",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4",
+    "yargs-parser": "^11.0.0"
+  }
+}

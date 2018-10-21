@@ -1,0 +1,7 @@
+1.单页 应用的场景 内部系统 移动端 三大框架
+2.单页的路由 两种 pushstate hash a/b #/a/b
+vue-router history 
+3.jq 三大框架 微前端
+4.运营页面 jq 快一点 vue react
+5.大型的单页 ng 
+6.各种各样的cli 
