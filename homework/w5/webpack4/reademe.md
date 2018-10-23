@@ -1,5 +1,8 @@
 # 解析
 
+## todo 
+- file-loader+url-loader 使用，打出的图片的内容是 js。
+
 ## output的 hash 、publicPath
 
 - hash 是当前webpack打包版本的hash；
@@ -59,6 +62,12 @@ import(/*webpackChunkName:"async"*/'./components/async').then((res)=>{
 
 - 待完善
 - splitChunks 提取公共代码， webpack 默认文件大小要超过 30k 才会分离出来。
+- 提取 runtime 代码为单独文件, 会将webpack的核心环境打成单独的文件。
+```js
+runtimeChunk: {
+    name: 'runtime'
+}
+```
 
 ##　mini-css-extract-plugin
 

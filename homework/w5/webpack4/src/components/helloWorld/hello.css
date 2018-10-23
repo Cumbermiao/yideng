@@ -1,3 +1,4 @@
+
 :root{
     --title-color:#333;
 }
@@ -9,7 +10,7 @@
     background: var(--bg-color);
 }
 body{
-    background: url('../../assets/view.jpg')
+    /* background: url('../../assets/view.jpg') no-repeat; */
 }
 /*
 
