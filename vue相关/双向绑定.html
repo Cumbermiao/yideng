@@ -92,7 +92,7 @@ Dep.prototype = {
 function SelfVue (data, el, exp) {
     this.data = data;
     observe(data);
-    console.log(this.data)
+    console.log(this)
     el.innerHTML = this.data[exp];  // 初始化模板数据的值
     console.log(el.innerHTML)
     new Watcher(this, exp, function (value) {
