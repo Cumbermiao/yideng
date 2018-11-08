@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .sec{
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
-    <script src="./analyze.js"></script>
+    <main>
+        <section class="sec">1</section>
+        <section class="sec">2</section>
+        <section class="sec">3</section>
+    </main>
+    <!-- <script src="./analyze.js"></script> -->
+    <script src="./jquery.js"></script>
+    <script>
+        $('.sec').on('click','sec',function(e){
+            console.log(e.data)
+        })
+    </script>
 </body>
 </html>
