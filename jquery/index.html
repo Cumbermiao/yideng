@@ -1,28 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .sec{
+        .sec {
             height: 100px;
         }
     </style>
 </head>
+
 <body>
     <main>
         <section class="sec">1</section>
         <section class="sec">2</section>
         <section class="sec">3</section>
+        <section class="sec2" id="sec2">
+            <div class="div">
+                <div class="div">
+                    <p class="p
+                            p2 p3" id="ppp">this is p</p>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- <script src="./analyze.js"></script> -->
     <script src="./jquery.js"></script>
     <script>
-        $('.sec').on('click','sec',function(e){
-            console.log(e.data)
-        })
+        // var s1 = $('.sec').on({
+        //     'click': function (e) {
+        //         console.log(e.data)
+        //     },
+        // hover:function(){
+        //     console.log("hover")
+        // }
+        // })
+        // var s2 = $('.sec:eq(1)').on({
+        //     hover:function(){
+        //         console.log("hover")
+        //     }
+        // })
+        // var s2 = $('.sec2').on({
+        //     hover:function(){
+        //         console.log("hover")
+        //     }
+        // })
+        // var sec = document.getElementsByClassName('sec')[0]
+        // console.dir(sec)
+
+        // sec.addEventListener('click',function(){
+        //     console.log('click')
+        // })
+        // sec.addEventListener('click',function(){
+        //     console.log('click2')
+        // })
+        // $('.sec2').on('click','.div',function(){
+        //     console.log('div')
+        // })
+
+        // setTimeout(function(){
+        //     $('.sec2').append('<div class="div">5</div>')
+        // },3000)
+        // document.onreadystatechange = function(e){
+        //     //interactive
+        //     console.log("readystate:",document.readyState)
+        // }
+        // document.addEventListener('DOMContentLoaded',function(){
+        //     console.log('DOMContentLoaded')
+        // })
+        // window.addEventListener('load',function(){
+        //     console.log('window load')
+        // })
+        // $(document).ready(function(){
+        //     console.log('doc ready')
+        // })
+    </script>
+    <script>
+ 
+        function bar(){
+            $.ajax({
+                url:'localhost:8888',
+                success:function(data){
+                    console.log('bar success',data)
+                },
+                error:function(){
+                    console.log('bar error')
+                },
+            })
+        }
+        bar()
     </script>
 </body>
+
 </html>

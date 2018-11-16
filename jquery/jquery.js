@@ -1640,6 +1640,7 @@
         },
     
         hasData: function( elem ) {
+            // console.log('expando',jQuery.expando,jQuery.cache)
             elem = elem.nodeType ? jQuery.cache[ elem[jQuery.expando] ] : elem[ jQuery.expando ];
             return !!elem && !isEmptyDataObject( elem );
         },
@@ -1665,7 +1666,8 @@
                 // the code to shortcut on the same path as a DOM node with no cache
                 id = isNode ? elem[ internalKey ] : elem[ internalKey ] && internalKey,
                 isEvents = name === "events";
-    
+                console.log('privateCache',cache)
+            
             // Avoid doing any more work than we need to when trying to get data on an
             // object that has no data at all
             if ( (!id || !cache[id] || (!isEvents && !pvt && !cache[id].data)) && getByName && data === undefined ) {
@@ -1703,7 +1705,6 @@
             }
     
             privateCache = thisCache = cache[ id ];
-    
             // jQuery data() is stored in a separate object inside the object's internal data
             // cache in order to avoid key collisions between internal data and user-defined
             // data.
@@ -2849,7 +2850,7 @@
             if ( elem.nodeType === 3 || elem.nodeType === 8 || !types || !handler || !(elemData = jQuery._data( elem )) ) {
                 return;
             }
-    
+            // console.log('elemData',elemData)
             // Caller can pass in an object of custom data in lieu of the handler
             if ( handler.handler ) {
                 handleObjIn = handler;
@@ -2882,12 +2883,13 @@
             // Handle multiple events separated by a space
             // jQuery(...).bind("mouseover mouseout", fn);
             types = jQuery.trim( hoverHack(types) ).split( " " );
+            // console.log('types',types)
             for ( t = 0; t < types.length; t++ ) {
     
                 tns = rtypenamespace.exec( types[t] ) || [];
                 type = tns[1];
                 namespaces = ( tns[2] || "" ).split( "." ).sort();
-    
+                // console.log('t',type,namespaces)
                 // If event changes its type, use the special event handlers for the changed type
                 special = jQuery.event.special[ type ] || {};
     
@@ -6765,7 +6767,6 @@
     curCSS = getComputedStyle || currentStyle;
     
     function getWH( elem, name, extra ) {
-        console.log('extra',extra,elem)
         // Start with offset property
         var val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
             which = name === "width" ? cssWidth : cssHeight,
@@ -9194,7 +9195,6 @@
         };
     
         jQuery.fn[ type ] = function( size ) {
-            console.log('type',size)
             // Get window width or height
             var elem = this[0];
             if ( !elem ) {
