@@ -60,6 +60,13 @@ if ("serviceWorker" in navigator) {
 this.addEventListener("install", function(e) {
   console.log("install 成功");
   // 如果监听到了 service worker 已经安装成功的话，就会调用 event.waitUntil 回调函数
+  // skipWaiting 直接进入 activate 阶段，一般情况install成功后要重新刷新才会进入activate
+  e.waitUntil(this.skipWaiting())
+});
+
+this.addEventListener("activate", function(e) {
+  console.log("activate 激活成功");
+  //更新缓存资源操作
   e.waitUntil(
     // 安装成功后操作 CacheStorage 缓存，使用之前需要先通过 caches.open() 打开对应缓存空间。
     caches.open("my-test-cache-v1").then(function(cache) {
@@ -73,11 +80,6 @@ this.addEventListener("install", function(e) {
       ]);
     })
   );
-});
-
-this.addEventListener("activate", function(e) {
-  console.log("activate 激活成功");
-  //更新缓存资源操作
 });
 ```
 
@@ -208,3 +210,12 @@ navigator.serviceWorker
     };
   });
 ```
+
+### 事件触发顺序
+- 第一次 register
+install  register  activate ready
+- 第二次 register（未注销）
+ready register
+- 第三次 （文件内容变动 有register skiptwaiting）
+ready register updatefound install activate
+必须使用 skipwaiting 才会检测到文件改动触发update和install activate

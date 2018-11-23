@@ -1,6 +1,6 @@
 import React from "react";
 // import ReactDOM from "react-dom";
-
+import './header.scss';
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -10,9 +10,10 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <i>icon</i>
-        <span></span>
+      <header className="header">
+        <i>icon-left</i>
+        <span>{this.title}</span>
+        <i>icon-right</i>
       </header>
     );
   }

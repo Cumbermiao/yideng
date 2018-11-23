@@ -21,10 +21,7 @@ module.exports = {
             "error",
             "windows"
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
+        "quotes": 0,
         "semi": [
             "error",
             "always"

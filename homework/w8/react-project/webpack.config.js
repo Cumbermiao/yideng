@@ -2,6 +2,7 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const { GenerateSW } = require("workbox-webpack-plugin");
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.js"),
   output: {
@@ -20,8 +21,18 @@ module.exports = {
           }
         },
         exclude: /node_modules/
+      },
+      {
+        test:/\.(css|scss)$/,
+        loader:'style-loader!css-loader!sass-loader'
       }
     ]
+  },
+  resolve:{
+    alias:{
+      "@":path.resolve(__dirname,'./src')
+    },
+    extensions:['.jsx','.js','.scss']
   },
   devServer: {
     // contentBase: path.join(__dirname, "dist"),
@@ -36,6 +47,10 @@ module.exports = {
       filename: "index.html",
       template: "index.html"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new GenerateSW({
+      swDest:"workbox-sw.js",
+      // importWorkboxFrom:"local",
+    })
   ]
 };

@@ -1,0 +1,4 @@
+@import "@/assets/scss/layout.scss";
+.header {
+  @include flex();
+}
