@@ -9,7 +9,7 @@
 </head>
 
 <body onload="receiveInfoFromAnotherDomain()">
-        <p>这个页面是HTML5跨域訪问的Domain2上的页面receiver.html，它会处理来自Domain1上sender.html发送的页面</p> 
+        <p>80 index</p> 
 </body>
 <script>
     function receiveInfoFromAnotherDomain() {
@@ -28,7 +28,7 @@
 
                 //如今能够处理数据了 
                 //控制台打印出接收到的json数据，由于我们把json字符串发送了过来 
-                console.log(ev.data);
+                console.log(ev);
 
                 //将json字符串转为json对象。然后从中分离出原始信息 
                 // var personInfoJSON = JSON.parse(ev.data);
@@ -42,6 +42,7 @@
                 // personInfoString += "头衔为：  " + title + "<br>";
                 // personInfoString += "信息为：  " + info + "<br>";
                 // document.body.innerHTML = personInfoString;
+                ev.source.postMessage('getMessage',ev.origin)
 
             }
 

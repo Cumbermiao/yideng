@@ -8,8 +8,8 @@
 
 <body>
 
-    <p>这个页面是HTML5跨域訪问的Domain1上的页面sender.html。它将发送一些信息到Domain2上的receiver.html</p>
-    <input type="button" value="点击则发送事件到Domain2" onclick="sendInfoToAnotherDomain();" />
+    <p>81 index</p>
+    <input type="button" value="点击则发送事件到iframe" onclick="sendInfoToAnotherDomain();" />
 
     <!-- 这个iframe包括了在另外一个domain->Domain2(http://localhost:8180)的接收者页面receiver.html -->
     <iframe width="1200" src="http://localhost:8080"></iframe>
@@ -36,6 +36,9 @@
 
         // console.log("json string has been sent to domain2 successfully");
     }
+    window.addEventListener('message',()=>{
+        console.log('send success')
+    })
 </script>
 
 </html>
