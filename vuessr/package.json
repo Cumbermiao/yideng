@@ -1,41 +1,47 @@
 {
-  "name": "vuebuild",
-  "description": "A Vue.js project",
+  "name": "vuessr",
   "version": "1.0.0",
-  "author": "",
-  "license": "MIT",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=client webpack --progress --hide-modules",
-    "server": "cross-env NODE_ENV=server webpack --progress"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cross-env NODE_ENV=server webpack --mode production --hide modules",
+    "gulp": "gulp",
+    "client": "cross-env NODE_ENV=client webpack --mode development --hide modules",
+    "vue": "cross-env NODE_ENV=vue webpack --mode development"
   },
-  "dependencies": {
-    "express": "^4.16.4",
-    "vue": "^2.5.11",
-    "vue-router": "^3.0.2",
-    "vue-server-renderer": "^2.5.17",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-decorators": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "css-loader": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-copy": "^4.0.1",
+    "gulp-watch": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "ts-loader": "^5.3.0",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
     "webpack-merge": "^4.1.4"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-3": "^6.24.1",
+  "dependencies": {
+    "awilix": "^4.0.0",
+    "awilix-koa": "^3.0.0",
     "cross-env": "^5.2.0",
-    "css-loader": "^0.28.7",
-    "file-loader": "^1.1.4",
-    "html-webpack-plugin": "^3.2.0",
-    "vue-loader": "^13.0.5",
-    "vue-ssr-webpack-plugin": "^3.0.0",
-    "vue-template-compiler": "^2.4.4",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.9.1",
-    "webpack-node-externals": "^1.7.2"
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-static": "^5.0.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.2",
+    "vue-server-renderer": "^2.5.17"
   }
 }

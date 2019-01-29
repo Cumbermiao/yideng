@@ -46,6 +46,12 @@ Watcher.prototype = {
 }
 ```
 ## SSR
+### 思路
+- 主要思路就是上面的例子，更加全面一点就需要添加 router 和 store。
+- router 也是需要通过工厂函数进行多次实例化，获取当前请求的 url ，客户端加载完组件之后将 vue 实例经过 createRenderer 处理后返回给后台。
+- app.js 导出一个 返回 app,router,store 工厂函数。用于注入给 client 和 server。
+- server 导出一个函数，接收参数 ctx， 函数获取 ctx 之后，往 vue 实例的 router push 当前的 url，router.onReady 里找到该路由需要的 component ，component 内容如果需要使用 dispatch 触发 action 来请求 http，要写在 component 的 asyncData 里面
+
 ### 简单实例
 - 使用 vue-server-renderer 的 createRenderer() 方法渲染 vue 实例为 html。
 - 后台获取 渲染后的 html 进行拼接返回响应。
@@ -86,6 +92,3 @@ app.listen(3000,()=>{
 })
 ```
 
-### 思路
-- 主要思路就是上面的例子，更加全面一点就需要添加 router 和 store。
-- router 也是需要通过工厂函数进行多次实例化，获取当前请求的 url ，客户端加载完组件之后将 vue 实例经过 createRenderer 处理后返回给后台。
