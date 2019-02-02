@@ -19,6 +19,6 @@ function MaxLen(arr) {
     }
     lastPosition[ele] = i;
   }
-  return arr.length - maxLen
+  return (arr.length - maxLen)
 }
 
