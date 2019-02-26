@@ -9,4 +9,10 @@ tag: english
 本系列旨在学习积累一些文档中常遇到的单词或者句子，提高英语水平。
 
 ### 01 relevant & medium.com 兴趣分类
-{% link relevant & medium.com 兴趣分类 http://localhost:4000/en/01.html%}
+{% link relevant & medium.com 兴趣分类 http://cumbermiao.github.io/en/01.html%}
+
+### 02 react v16.8 翻译
+{%  link react v16.8 翻译 http://cumbermiao.github.io/en/02.html%}
+
+### 03 chrome extension
+{%  link chrome extension 翻译 http://cumbermiao.github.io/en/03.html%}
