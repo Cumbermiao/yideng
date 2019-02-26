@@ -1,29 +1,10 @@
 # etouch
+> 快速打开网站，默认配置了三个快捷键 alt+q alt+w alt+e ，默认打开百度，可以自定义配置打开网站，方便每天早上查看新闻或者打开公司oa等网站。
 
-fast to open pages you like
+#### 因为穷所以没钱发布到 chrome 的商店里，可以下载 packages 里的 zip 文件进行安装。
 
-## Install
-
-	$ npm install
-
-## Development
-
-    npm run dev chrome
-    npm run dev firefox
-    npm run dev opera
-    npm run dev edge
-
-## Build
-
-    npm run build chrome
-    npm run build firefox
-    npm run build opera
-    npm run build edge
-
-## Environment
-
-The build tool also defines a variable named `process.env.NODE_ENV` in your scripts. 
-
-## Docs
-
-* [webextension-toolbox](https://github.com/HaNdTriX/webextension-toolbox)
+### 安装步骤
+1. 打卡 chrome 浏览器， 在地址栏中输入 chrome://extensions
+2. 在右上角打开 开发者模式 
+3. 左上角选择加载已解压的扩展程序，并选择解压之后的文件夹
+4. 安装成功之后就可以使用快捷键打开网页了，要配置页面在网页右上角的 etouch 右击选择 选项 进入配置页。
