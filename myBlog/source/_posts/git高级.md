@@ -32,9 +32,15 @@ git checkout -b branch-name 创建分支并切换过去
 1. 使用 vituralBox 创建一个 Linux 服务器(Ubuntu)，注意网络 主机要能与虚拟机 互通，我网络使用的是 桥接模式，详细区别上网搜。
 
 #### 上传秘钥&免密登录
+> 如果本地有多个秘钥，推送时可能会失败，需要手动将秘钥添加到 ssh-agent
 ```bash
 //本地生成密钥对
 ssh-keygen -t rsa -C "起个任意的名字" -f "任意名字_rsa"
+
+//ssh-agent 添加秘钥
+eval("${ssh-agent -s}")
+ssh-add ~/.ssh/id_rsa
+
 cd ~/.ssh/
 ssh-copy-id -i id_rsa miao@192.168.26.237
 
@@ -73,6 +79,7 @@ chmod repo.git 777 -R
 
 ```
 #### 本地添加远程仓库，测试push
+> 注意本地如果是在分支上开发，需要将分支推到远程仓库上
 
 ```bash
 mkdir test && cd test

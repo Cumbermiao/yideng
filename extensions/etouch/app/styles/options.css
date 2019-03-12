@@ -8,8 +8,8 @@ h3{
   margin:10px 0;
 }
 
-div{
-  /* font-size: 14px; */
+.file{
+  margin-bottom: 20px;
 }
 
 .urlList{
@@ -19,9 +19,7 @@ div{
 .urlItem{
   margin: 12px 0;
 }
-.input{
-  
-}
+
 .input:focus{
   border-color: #dcdfe6;
 }
