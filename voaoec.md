@@ -10,7 +10,7 @@
 在创建 VO 时，按照 形参>函数声明>变量声明 的顺序声明变量，初始值都为 undefined，当函数执行时，为 EC 的 this 赋值，为变量赋值，获取实参，形成变量对象的就是 AO。
 
 ## 异步队列
-> js中的异步队列分为 宏队列和微队列，宏队列包含 setTimeout, setInterval, setImmediate, I/O, UI rendering；微队列包含  process.nextTick, Promises, Object.observe, MutationObserver。
+> js中的异步队列分为 宏队列和微队列，宏队列包含 setTimeout, setInterval, setImmediate, I/O, UI rendering, requestAnimationFrame；微队列包含  process.nextTick, Promises, Object.observe, MutationObserver。
 - Mutation Observer（变动观察器）是监视DOM变动的接口。当DOM对象树发生任何变动时，Mutation Observer会得到通知。
 - Object.observe 已经废弃。
 

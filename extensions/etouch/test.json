@@ -1,0 +1,23 @@
+[
+  {
+    "key":"a",
+    "list":[
+      {"id": 1,"label":"site1","url":"http://www.baidu.com"},
+      {"id": 2,"label":"site2","url":"http://www.github.com"}
+    ]
+  },
+  {
+    "key":"b",
+    "list":[
+      {"id": 1,"label":"site1","url":"http://www.baidu.com"},
+      {"id": 2,"label":"site2","url":"http://www.github.com"}
+    ]
+  },
+  {
+    "key":"c",
+    "list":[
+      {"id": 1,"label":"site1","url":"http://www.baidu.com"},
+      {"id": 2,"label":"site2","url":"http://www.github.com"}
+    ]
+  }
+]

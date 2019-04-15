@@ -38,6 +38,7 @@ git checkout -b branch-name 创建分支并切换过去
 ssh-keygen -t rsa -C "起个任意的名字" -f "任意名字_rsa"
 
 //ssh-agent 添加秘钥
+ssh-agent bash
 eval("${ssh-agent -s}")
 ssh-add ~/.ssh/id_rsa
 
