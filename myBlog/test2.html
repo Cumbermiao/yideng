@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //二叉搜索树
+
+    // class Node {
+    //   constructor(key) {
+    //     this.key = key;
+    //     this.left = null;
+    //     this.right = null;
+    //   }
+    // }
+    // class BinarySearchTree {
+    //   constructor() {
+    //     this.root = null;
+    //   }
+
+    //   insert(key) {
+    //     if (key === undefined) {
+    //       return false
+    //     }
+    //     let node = new Node(key);
+    //     if (this.root === null) {
+    //       this.root = node;
+    //     } else {
+    //       this._insertNode(this.root, node)
+    //     }
+    //   }
+
+    //   _insertNode(root, node) {
+    //     if (root.key <= node.key) {
+    //       if (root.right === null) {
+    //         root.right = node
+    //       } else {
+    //         this._insertNode(root.right, node)
+    //       }
+    //     } else {
+    //       if (root.left === null) {
+    //         root.left = node;
+    //       } else {
+    //         this._insertNode(root.left, node)
+    //       }
+    //     }
+    //   }
+
+    //   search(key) {
+    //     let node = this._searchNodeByKey(this.root, key);
+    //     return node
+    //   }
+
+    //   _searchNodeByKey(root, key) {
+    //     if (root.key === key) {
+    //       return root
+    //     } else if (root.key < key) {
+    //       return root.right ? this._searchNodeByKey(root.right, key) : undefined;
+    //     } else {
+    //       return root.left ? this._searchNodeByKey(root.left, key) : undefined;
+    //     }
+    //   }
+
+    //   inOrderTraverse(callback) {
+    //     if (typeof TypeError !== 'function') {
+    //       throw Error('inOrderTraverse accept a function!')
+    //     }
+    //     this._inOrderTraverseNode(this.root, callback)
+    //   }
+
+    //   _inOrderTraverseNode(node, callback) {
+    //     if (node !== null) {
+    //       this._inOrderTraverseNode(node.left, callback);
+    //       callback(node.key);
+    //       this._inOrderTraverseNode(node.right, callback);
+    //     }
+    //   }
+
+    //   preOrderTraverse(callback) {
+    //     if (typeof callback !== 'function') {
+    //       throw TypeError('inOrderTraverse accept a function!')
+    //     }
+    //     this._preOrderTraverseNode(this.root, callback)
+    //   }
+
+    //   _preOrderTraverseNode(node, callback) {
+    //     if (node !== null) {
+    //       callback(node.key);
+    //       this._preOrderTraverseNode(node.left, callback);
+    //       this._preOrderTraverseNode(node.right, callback)
+    //     }
+    //   }
+    //   postOrderTraverse(callback) {
+    //     if (typeof callback !== 'function') {
+    //       throw TypeError('inOrderTraverse accept a function!')
+    //     }
+    //     this._postOrderTraverseNode(this.root, callback)
+    //   }
+    //   _postOrderTraverseNode(node, callback) {
+    //     if (node !== null) {
+    //       this._postOrderTraverseNode(node.left, callback);
+    //       this._postOrderTraverseNode(node.right, callback);
+    //       callback(node.key)
+    //     }
+    //   }
+
+    //   printNode(value) {
+    //     console.log(value)
+    //   }
+
+    //   min() {
+    //     let current = this.root;
+    //     if (!current) {
+    //       return
+    //     }
+    //     while (current.left) {
+    //       current = current.left;
+    //     }
+    //     return current.key
+    //   }
+
+    //   max() {
+    //     let current = this.root;
+    //     if (!current) {
+    //       return
+    //     }
+    //     while (current.right) {
+    //       current = current.right
+    //     }
+    //     return current.key
+    //   }
+
+    //   _findMinNode(node){
+    //     if(node){
+    //       let current = node;
+    //       while(current.left){
+    //         current = current.left
+    //       }
+    //       return current
+    //     }
+    //   }
+    //   remove(key) {
+    //     this.root=this._removeNode(this.root,key)
+    //   }
+    //   _removeNode(node,key){
+    //     if(node === null){
+    //       return null
+    //     }
+    //     if(node.key<key){
+    //       node.right = this._removeNode(node.right,key);
+    //       return node
+    //     }else if(node.key>key){
+    //       node.left = this._removeNode(node.left,key);
+    //       return node
+    //     }else{
+    //       if(node.left === null && node.right === null){
+    //         node = null;
+    //         return node
+    //       }else if(node.left === null){
+    //         node = node.right;
+    //         return node
+    //       }else if(node.right === null){
+    //         node = node.left;
+    //         return node
+    //       }else{
+    //         //找到node 右侧的最小的叶节点， 用叶节点的值更新node，并删除该叶节点
+    //         let minNode = this._findMinNode(node.right);
+    //         node.key = minNode.key;
+    //         node.right = this._removeNode(node.right,minNode.key);
+    //         return node
+    //       }
+    //     }
+
+    //   }
+    // }
+
+    // var a = new BinarySearchTree();
+    // a.insert(100);
+    // a.insert(90);
+    // a.insert(111);
+    // a.insert(119);
+    // a.insert(108);
+    // a.insert(107);
+    // a.insert(109);
+    // a.insert(118);
+    // a.insert(120);
+    // console.log(a.search(108))
+    // a.remove(111)
+    // a.remove(111)
+    // a.inOrderTraverse(a.printNode)
+    // typeof
+    // a.preOrderTraverse(a.printNode)
+    // a.postOrderTraverse(a.printNode)
+  </script>
+
+  <script>
+    //图
+    // class Dictionary {
+    //   constructor() {
+    //     this.obj = {};
+    //   }
+    //   set(key, value) {
+    //     if (key) {
+    //       this.obj[key] = value === undefined ? undefined : value;
+    //       return true;
+    //     }
+    //     return false;
+    //   }
+    //   get(key) {
+    //     if (this.has(key)) {
+    //       return this.obj[key];
+    //     }
+    //   }
+    //   remove(key) {
+    //     if (this.has(key)) {
+    //       delete this.obj[key];
+    //       return true;
+    //     }
+    //     return false;
+    //   }
+    //   has(key) {
+    //     if (key in this.obj) {
+    //       return true;
+    //     }
+    //     return false;
+    //   }
+    //   clear() {
+    //     this.obj = {};
+    //   }
+    //   size() {
+    //     return Object.keys(this.obj).length;
+    //   }
+    //   values() {
+    //     let value = [];
+    //     for (let key in this.obj) {
+    //       value.push(this.obj[key]);
+    //     }
+    //     return value;
+    //   }
+    //   keys() {
+    //     return Object.keys(this.obj);
+    //   }
+    // }
+
+    // class Queue {
+    //   constructor() {
+    //     this.arr = [];
+    //   }
+    //   enqueue(ele) {
+    //     let isArray = ele instanceof Array;
+    //     if (isArray) {
+    //       for (var i = 0; i < ele.length; i++) {
+    //         this.arr.push(ele[i]);
+    //       }
+    //       return;
+    //     }
+    //     this.arr.push(ele);
+    //   }
+    //   dequeue() {
+    //     return this.arr.shift();
+    //   }
+    //   front() {
+    //     return this.arr[0];
+    //   }
+    //   isEmpty() {
+    //     return this.arr.length == 0;
+    //   }
+    //   size() {
+    //     return this.arr.length;
+    //   }
+    //   print() {
+    //     console.log(this.arr.toString());
+    //   }
+    // }
+
+    // class Node {
+    //   constructor(ele) {
+    //     this.element = ele;
+    //     this.next = null;
+    //   }
+    // }
+
+    // class LinkedList {
+    //   constructor() {
+    //     this.length = 0;
+    //     this.head = null;
+    //   }
+
+    //   append(ele) {
+    //     let element = new Node(ele);
+    //     if (this.head == null) {
+    //       this.head = element;
+    //       this.length++;
+    //       return;
+    //     }
+    //     let current = this.head;
+    //     while (current.next) {
+    //       current = current.next;
+    //     }
+    //     current.next = element;
+    //     this.length++;
+    //   }
+
+    //   insert(pos, ele) {
+    //     if (this.length >= pos && pos >= 0) {
+    //       let element = new Node(ele);
+    //       let previous;
+    //       let i = 0;
+    //       let current = this.head;
+    //       if (pos === 0) {
+    //         this.head = element;
+    //         element.next = current;
+    //       } else {
+    //         while (i < pos) {
+    //           previous = current;
+    //           current = current.next;
+    //           i++;
+    //         }
+    //         element.next = current;
+    //         previous.next = element;
+    //       }
+    //       this.length++;
+    //     }
+    //   }
+
+    //   removeAt(pos) {
+    //     if (this.length > pos && pos >= 0) {
+    //       let current = this.head;
+    //       let i = 0;
+    //       let previous;
+    //       if (pos === 0) {
+    //         this.head = this.head.next;
+    //       } else {
+    //         while (pos > i) {
+    //           previous = current;
+    //           current = current.next;
+    //           i++;
+    //         }
+    //         previous.next = current.next;
+    //       }
+    //       this.length--;
+    //       return current.element;
+    //     }
+    //   }
+
+    //   remove(ele) {
+    //     let idx = this.indexOf(ele);
+    //     return this.removeAt(idx);
+    //   }
+
+    //   indexOf(ele) {
+    //     let i = -1;
+    //     let current = this.head;
+    //     while (current) {
+    //       if (current.element === ele) {
+    //         return i;
+    //       }
+    //       current = current.next;
+    //     }
+    //     return -1;
+    //   }
+
+    //   isEmpty() {
+    //     return this.length === 0;
+    //   }
+    //   size() {
+    //     return this.length;
+    //   }
+    //   toString() {
+    //     let current = this.head;
+    //     let str = "";
+    //     while (current) {
+    //       str = "," + current.element.toString();
+    //       current = current.next;
+    //     }
+    //     return str.slice(1);
+    //   }
+    //   getHead() {
+    //     return this.head;
+    //   }
+    // }
+
+    // class Graph {
+    //   constructor() {
+    //     this.vertex = [];
+    //     this.adjList = new Dictionary();
+    //   }
+    //   addVertex(vertex) {
+    //     this.vertex.push(vertex);
+    //     this.adjList.set(vertex, []);
+    //   }
+    //   addEdge(vertex1, vertex2) {
+    //     let edgeList1 = this.adjList.get(vertex1);
+    //     let edgeList2 = this.adjList.get(vertex2);
+    //     if (edgeList1 && edgeList2) {
+    //       if (edgeList1.indexOf(vertex2) > -1 || edgeList2.indexOf(vertex2) > -1) {
+    //         console.warn(`${vertex2} has already been linked to ${vertex1}!`)
+    //       } else {
+    //         edgeList1.push(vertex2)
+    //         edgeList2.push(vertex1)
+    //       }
+    //     }
+    //   }
+    //   toString() {
+    //     let str = "";
+    //     this.vertex.forEach(item => {
+    //       let edgeList = this.adjList.get(item);
+    //       let edgeStr = edgeList.join(' ');
+    //       str += `${item} -> ${edgeStr} \n`
+    //     })
+    //     return str
+    //   }
+    //   _initColor() {
+    //     let color = {};
+    //     this.vertex.forEach(item => {
+    //       color[item] = 'white'
+    //     })
+    //     return color
+    //   }
+    //   bfs(vertex, callback) {
+    //     let color = this._initColor();
+    //     let queue = new Queue();
+    //     queue.enqueue(vertex);
+    //     while (!queue.isEmpty()) {
+    //       let v = queue.dequeue();
+    //       color[v] = 'grey';
+    //       let edgeList = this.adjList.get(v);
+    //       edgeList.forEach(edge => {
+    //         if (color[edge] === 'white') {
+    //           color[edge] = 'grey';
+    //           queue.enqueue(edge);
+    //         }
+    //       })
+    //       color[v] = 'black';
+    //       callback && callback(v);
+    //     }
+    //   }
+    //   _initDeepth() {
+    //     let deep = {};
+    //     this.vertex.forEach(item => {
+    //       deep[item] = 0;
+    //     })
+    //     return deep
+    //   }
+    //   BFS(vertex) {
+    //     //计算顶点到其他顶点的深度，可以通过 preVertex 反推出最短的路线
+    //     let color = this._initColor();
+    //     let queue = new Queue();
+    //     let deep = {};
+    //     let preVertex = [];
+    //     queue.enqueue(vertex);
+    //     preVertex[vertex] = null;
+    //     deep = this._initDeepth();
+    //     while (!queue.isEmpty()) {
+    //       let v = queue.dequeue();
+    //       color[v] = 'grey';
+    //       let edgeList = this.adjList.get(v);
+    //       if (edgeList.length > 0) {
+
+    //         edgeList.forEach(edge => {
+    //           if (color[edge] === 'white') {
+    //             color[edge] = 'grey';
+    //             queue.enqueue(edge);
+    //             deep[edge] = deep[v] + 1;
+    //             preVertex[edge] = v;
+    //           }
+    //         })
+    //       }
+    //       color[v] = 'black';
+    //     }
+    //     return {
+    //       deep,
+    //       preVertex
+    //     }
+    //   }
+
+    //   DFS( callback) {
+    //     let color = this._initColor();
+    //     let queue = new Queue;
+    //     let vertex = this.vertex[0]
+    //     queue.enqueue(vertex);
+    //     color[vertex] = 'grey';
+    //     while (!queue.isEmpty()) {
+    //       let v = queue.dequeue();
+    //       color[v] = 'black';
+    //       callback(v);
+    //       let edgeList = this.adjList.get(v);
+    //       if (edgeList.length > 0) {
+    //         edgeList.forEach(edge => {
+    //           this._mapDFS(edge,queue,color,callback)
+    //         })
+    //       }
+    //     }
+    //   }
+
+
+    //   _mapDFS(vertex, queue, color, callback) {
+    //     if (color[vertex] === 'white') {
+    //       queue.enqueue(vertex);
+    //       color[vertex] = 'grey';
+    //       let v = queue.dequeue();
+    //       callback(v);
+    //       let edgeList = this.adjList.get(v);
+    //       if (edgeList.length > 0) {
+    //         edgeList.forEach(edge => {
+    //           this._mapDFS(edge, queue, color, callback)
+    //         })
+    //       }
+    //       color[v] = 'black';
+    //     }
+
+    //   }
+
+    //   dfs(callback) {
+    //     var color = this._initColor();
+    //     let vertices = this.vertex;
+    //     for (var i = 0; i < vertices.length; i++) { //{2}
+    //       if (color[vertices[i]] === 'white') { //{3}
+    //         this.dfsVisit(vertices[i], color, callback); //{4}
+    //       }
+    //     }
+    //   }
+
+    //   dfsVisit = function (u, color, callback) {
+    //     color[u] = 'grey'; //{5}
+    //     if (callback) { //{6}
+    //       callback(u);
+    //     }
+    //     var neighbors = this.adjList.get(u); //{7}
+    //     for (var i = 0; i < neighbors.length; i++) { //{8}
+    //       var w = neighbors[i]; //{9}
+    //       if (color[w] === 'white') { //{10}
+    //         this.dfsVisit(w, color, callback); //{11}
+    //       }
+    //     }
+    //     color[u] = 'black'; //{12}
+    //   }
+    // }
+    // var graph = new Graph();
+    // var myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']; //{7}
+    // for (var i = 0; i < myVertices.length; i++) { //{8}
+    //   graph.addVertex(myVertices[i]);
+    // }
+    // graph.addEdge('A', 'B'); //{9}
+    // graph.addEdge('A', 'C');
+    // graph.addEdge('A', 'D');
+    // graph.addEdge('C', 'D');
+    // graph.addEdge('C', 'G');
+    // graph.addEdge('D', 'G');
+    // graph.addEdge('D', 'H');
+    // graph.addEdge('B', 'E');
+    // graph.addEdge('B', 'F');
+    // graph.addEdge('E', 'I');
+    // // console.log(graph.toString())
+    // // console.log(graph.BFS('A'))
+    // graph.dfs(v => console.log(v))
+    // console.log('------------------')
+    // graph.DFS(v => console.log(v))
+  </script>
+
+  <script>
+    //冒泡排序
+    // let arr = [20, 10, 30, 50, 40, 22];
+    // for (var i = 0; i < arr.length; i++) {
+    //   let temp;
+    //   temp = arr[i];
+    //   if (arr[i] > arr[i + 1]) {
+    //     arr[i] = arr[i + 1];
+    //     arr[i + 1] = temp;
+    //     temp = undefined;
+    //   }
+    //   for (var j = 0; j < arr.length - 1; j++) {
+    //     let temp = arr[j];
+    //     if (arr[j] > arr[j + 1]) {
+    //       arr[j] = arr[j + 1];
+    //       arr[j + 1] = temp;
+    //       temp = undefined;
+    //     }
+    //   }
+    // }
+    // console.log(arr)
+    // function ArrayList() {
+    //   var array = [];
+    //   this.insert = function (item) {
+    //     array.push(item);
+    //   };
+    //   this.toString = function () {
+    //     return array.join();
+    //   };
+    //   var swap = function (index1, index2) {
+    //     var aux = array[index1];
+    //     array[index1] = array[index2];
+    //     array[index2] = aux;
+    //   };
+    //   this.bubbleSort = function () {
+    //     var length = array.length; //{1}
+    //     for (var i = 0; i < length; i++) { //{2}
+    //       for (var j = 0; j < length - 1; j++) { //{3}
+    //         if (array[j] > array[j + 1]) { //{4}
+    //           swap(j, j + 1); //{5}
+    //         }
+    //       }
+    //     }
+    //   };
+    // } 
+
+
+    // var a = new ArrayList;
+    // arr.forEach((item)=>{
+    //   a.insert(item)
+    // })
+    // a.bubbleSort();
+    // console.log(a.toString())
+  </script>
+
+  <script>
+    class ArrayList {
+      constructor(arr) {
+        this.arr = arr;
+      }
+      swap(idx1, idx2) {
+        let temp = this.arr[idx1];
+        this.arr[idx1] = this.arr[idx2];
+        this.arr[idx2] = temp;
+      }
+      toString() {
+        return this.arr.join(',');
+      }
+    }
+    class Insertion extends ArrayList {
+      constructor(arr) {
+        super(arr);
+      }
+
+      sort() {
+        let arr = [this.arr[0]];
+        for (let i = 1; i < this.arr.length; i++) {
+          let j = i;//j
+          let temp = this.arr[i];
+          while (j > 0 && temp < arr[j - 1]) {
+            arr[j] = arr[j - 1];
+            j--;
+          }
+          arr[j] = temp;
+        }
+        this.arr = arr;
+      }
+    }
+
+    var arr = [20, 10, 30, 50, 40, 22];
+    // var a = new Insertion(arr);
+    // a.sort();
+    // console.log(a.toString())
+  </script>
+
+  <script>
+    //归并
+    class Merger extends ArrayList {
+      constructor(arr) {
+        super(arr);
+      }
+      splitRecursion(arr) {
+        var length = arr.length;
+        if (length > 1) {
+          var midIdx = Math.floor(length / 2);
+          var left = arr.slice(0, midIdx);
+          var right = arr.slice(midIdx, length);
+          var a = this.merge(this.splitRecursion(left), this.splitRecursion(right))
+          console.log('merge', a)
+          return a
+        } else {
+          return arr
+        }
+      }
+      merge(leftArr, rightArr) {
+        console.log(leftArr, rightArr)
+        var result = [];
+        var il = 0;
+        var ir = 0;
+        while (il < leftArr.length && ir < rightArr.length) {
+          if (leftArr[il] < rightArr[ir]) {
+            result.push(leftArr[il]);
+            il++;
+          } else {
+            result.push(rightArr[ir]);
+            ir++;
+          }
+        }
+        //rightArr 全部push之后，leftArr未归并的数进行归并
+        while (il < leftArr.length) {
+          result.push(leftArr[il]);
+          il++;
+        }
+        //leftArr 全部归并，rightArr 未归并完
+        while (ir < rightArr.length) {
+          result.push(rightArr[ir]);
+          ir++;
+        }
+        return result
+      }
+      sort() {
+        return this.splitRecursion(this.arr)
+      }
+    }
+    var arr = [5,8,3,6,4];
+    // var a = new Merger(arr)
+    // console.log(a.split())
+  </script>
+
+  <script>
+    //快排
+    //XXX: 对整个数组排序，不是生成新数组排序， 巧妙的使用每次排序之后的下标
+    class Quick extends ArrayList {
+      constructor(arr) {
+        super(arr);
+      }
+
+      sort() {
+        this.split(this.arr,0,this.arr.length-1)
+      }
+      split(arr,left,right){
+        var idx;
+        if(arr.length>1){
+          idx = this._quicksort(arr,left,right);
+        }
+        if(left<idx-1){
+          this.split(arr,left,idx-1)
+        }
+        if(right>idx){
+          this.split(arr,idx,right)
+        }
+      }
+
+      _quicksort(arr,left,right){
+        var pivot = arr[Math.floor((left+right)/2)];
+        var i = left;
+        var j = right;
+        while(i<j){
+          while(arr[i]<=pivot){
+            i++
+          }
+          while(arr[j]>pivot){
+            j--
+          }
+          if(i<j){
+            this.swap(arr,i,j);
+            i++;
+            j--;
+          }
+        }
+        return i
+      }
+
+      
+      // quick(arr,left,right){
+      //   var idx ;
+      //   if(arr.length>1){
+      //     idx = this.partition(arr,left,right);
+      //   }
+      //   if(left<idx-1){
+      //     this.quick(arr,left,idx-1)
+      //   }
+      //   if(idx<right){
+      //     this.quick(arr,idx,right)
+      //   }
+      // }
+      // partition(arr,left,right){
+      //   var pivot = arr[Math.floor((left+right)/2)];
+      //   var i = left;
+      //   var j = right;
+      //   while(i<=j){
+      //     while(arr[i]<pivot){
+      //       i++
+      //     }
+      //     while(arr[j]>pivot){
+      //       j--
+      //     }
+      //     if(i<=j){
+      //       this.swap(arr,i,j);
+      //       i++;
+      //       j--;
+      //     }
+      //   }
+      //   console.log(i)
+      //   return i
+      // }
+      swap(arr,i,j){
+        var aux = arr[i];
+        arr[i] = arr[j];
+        arr[j] = aux;
+      }
+    }
+    var a = new Quick(arr)
+    // a.sort();
+    a.sort(this.arr,0,this.arr.length-1)
+    console.log(a.toString())
+  </script>
+</body>
+
+</html>

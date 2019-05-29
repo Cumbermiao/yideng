@@ -3,7 +3,6 @@
 Webpack Loader 高手进阶(一)
 ======================
 
-**文章首发于个人github blog: [Biu-blog](https://github.com/CommanderXL/Biu-blog)，欢迎大家关注~**
 
 Webpack 系列文章：
 

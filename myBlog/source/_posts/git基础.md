@@ -87,40 +87,40 @@ Git 支持多种数据传输协议。 上面的例子使用的是 https:// 协�
 
 #### 查看历史提交
  git log 会按提交时间列出所有的更新
- ```git log -p -n``` -p 显示每次提交的内容差异， -n 表示比较最近 n 次提交
- ```git log --pretty=format ```相关格式参照上面的文章
+ `git log -p -n` -p 显示每次提交的内容差异， -n 表示比较最近 n 次提交
+ `git log --pretty=format `相关格式参照上面的文章
 
 ### 撤销操作
 
 #### 撤销提交
-```git commit --amend``` 重新对上一次提交进行提交， 如果上一次提交后没有修改则直接修改 commit 信息，如果上一次后有修改的内容需要先暂存，改命令会提交暂存内容并修改commit 信息。
+`git commit --amend` 重新对上一次提交进行提交， 如果上一次提交后没有修改则直接修改 commit 信息，如果上一次后有修改的内容需要先暂存，改命令会提交暂存内容并修改commit 信息。
 
-如果你 add * 暂存了错误的文件并且已经 commit 了， 可以使用 ```git rm``` + ```git commit --amend``` 来删除 git 中的错误文件，因为 rm 删除了暂存区的文件，amend 重新提交会提交暂存区的内容，所以就会覆盖上次 commit。
+如果你 add * 暂存了错误的文件并且已经 commit 了， 可以使用 `git rm` + `git commit --amend` 来删除 git 中的错误文件，因为 rm 删除了暂存区的文件，amend 重新提交会提交暂存区的内容，所以就会覆盖上次 commit。
 
 #### 撤销暂存文件
-```git reset HEAD filename ``` 撤销暂存区中的文件
+`git reset HEAD filename ` 撤销暂存区中的文件
 
 #### 撤销文件修改
-```git checkout -- filename``` 撤销文件改动，注意使用该命令无法恢复之前文件的改动
+`git checkout -- filename` 撤销文件改动，注意使用该命令无法恢复之前文件的改动
 
 ### 远程仓库
 
 #### 添加远程仓库
-```git remote add <remote-name> <url>``` 新增远程仓库，shortname 缩写别名
+`git remote add <remote-name> <url>` 新增远程仓库，shortname 缩写别名
 仓库可能会有多个，一般第一次新增的为origin。添加了远程仓库可以拉取数据。
 
 #### 拉取数据
-```git fetch [remote-name]``` 这个命令会访问远程仓库，从中拉取所有你还没有的数据。 执行完成后，你将会拥有那个远程仓库中所有分支的引用，可以随时合并或查看。
+`git fetch [remote-name]` 这个命令会访问远程仓库，从中拉取所有你还没有的数据。 执行完成后，你将会拥有那个远程仓库中所有分支的引用，可以随时合并或查看。
 
 #### 推送到远程仓库
-```git push [remote-name] [branch-name]```  只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。
+`git push [remote-name] [branch-name]`  只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。
 
 #### 查看远程仓库
-```git remote show [remote-name]``` 查看远程仓库信息
+`git remote show [remote-name]` 查看远程仓库信息
 
 #### 远程仓库的移除与重命名
-```git remote rename origin_name new_name```  修改仓库的 remote_name
-```git remote rm [remote-name]``` 删除远程仓库
+`git remote rename origin_name new_name`  修改仓库的 remote_name
+`git remote rm [remote-name]` 删除远程仓库
 
 ### 标签
 
@@ -129,11 +129,11 @@ Git 使用两种主要类型的标签：轻量标签（lightweight）与附注�
 轻量标签很像一个不会改变的分支 - 它只是一个特定提交的引用。
 附注标签是存储在 Git 数据库中的一个完整对象。 它们是可以被校验的；其中包含打标签者的名字、电子邮件地址、日期时间；还有一个标签信息；并且可以使用 GNU Privacy Guard （GPG）签名与验证。 通常建议创建附注标签，这样你可以拥有以上所有信息。
 
-```git tag tag-name``` 创建轻量标签
-```git tag -a tag-name``` 创建轻量标签
-```git tag tag-name commit-id``` 可以给之前commit的记录打tag
+`git tag tag-name` 创建轻量标签
+`git tag -a tag-name` 创建轻量标签
+`git tag tag-name commit-id` 可以给之前commit的记录打tag
 
-一般情况下， git push 命令并不会传送标签到远程仓库服务器上。在创建完标签后你必须显式地推送标签到共享服务器上。 这个过程就像共享远程分支一样 - 你可以运行 ```git push origin [tagname]```。
+一般情况下， git push 命令并不会传送标签到远程仓库服务器上。在创建完标签后你必须显式地推送标签到共享服务器上。 这个过程就像共享远程分支一样 - 你可以运行 `git push origin [tagname]`。
 
 #### 删除标签
 ```git tag -d tag-name``` 删除标签
@@ -148,3 +148,16 @@ Git 使用两种主要类型的标签：轻量标签（lightweight）与附注�
 - 取消暂存文件 ```git config --global alias.unstage 'reset HEAD --'```
 
 如果要执行外部命令，而不是一个 Git 子命令。 如果是那样的话，可以在命令前面加入 ! 符号。  如果你自己要写一些与 Git 仓库协作的工具的话，那会很有用。 
+
+## github 多账户管理
+1. 首先为每个账户生成不同的秘钥
+2. 配置 .ssh/config
+```bash
+# teamsprite
+Host team
+HostName github.com
+User git
+IdentityFile ~/.ssh/teamsprite_rsa
+```
+3. 开启`ssh-agent`，使用命令`ssh-add rsa私钥` 添加到 ssh-agent 中
+4. 下次设置 `remote` 的地址时替换 ssh 地址中 `git@github.com` 为`config` 文件中的`Host`，已设置的可以使用 `git remote set-url origin team:teamsprite/test.git` 修改远程地址。
