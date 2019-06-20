@@ -4,7 +4,8 @@
   "description": "",
   "main": "karma.conf.js",
   "scripts": {
-    "test": "node ./node_modules/bin.karma start"
+    "test": "node ./node_modules/karma/bin/karma start",
+    "karma": "./node_modules/.bin/karma"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
   },
   "devDependencies": {
     "jasmine-core": "^3.2.1",
+    "karma-cli": "^2.0.0",
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^1.1.2",
     "karma-phantomjs-launcher": "^1.0.4"

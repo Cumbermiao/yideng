@@ -161,3 +161,10 @@ IdentityFile ~/.ssh/teamsprite_rsa
 ```
 3. 开启`ssh-agent`，使用命令`ssh-add rsa私钥` 添加到 ssh-agent 中
 4. 下次设置 `remote` 的地址时替换 ssh 地址中 `git@github.com` 为`config` 文件中的`Host`，已设置的可以使用 `git remote set-url origin team:teamsprite/test.git` 修改远程地址。
+
+## git pull/push timeout
+```
+ssh -T git@github.com
+ssh -T -p 22 git@ssh.github.com
+ssh -T -p 443 git@ssh.github.com
+```

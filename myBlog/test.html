@@ -994,26 +994,26 @@
         this.table = []
       }
       put(key, value) {
-        if(key===undefined){
+        if (key === undefined) {
           return false
         }
         let idx = loseloseCode(key);
-        if(!this.table[idx]){
+        if (!this.table[idx]) {
           this.table[idx] = new LinkedList();
         }
-        this.table[idx].append(new HashElement(key,value));
+        this.table[idx].append(new HashElement(key, value));
         return true
       }
       remove(key) {
         let idx = loseloseCode(key);
-        if(this.table[idx]){
+        if (this.table[idx]) {
           let current = this.table[idx].getHead();
-          while(current){
+          while (current) {
             let ele = current.element;
-            if(ele.key===key){
+            if (ele.key === key) {
               this.table[idx].remove(ele);
-              if(this.table[idx].isEmpty()){
-                this.table[idx]=undefined;
+              if (this.table[idx].isEmpty()) {
+                this.table[idx] = undefined;
               }
               return true
             }
@@ -1023,16 +1023,16 @@
         return false
       }
       get(key) {
-        if(key===undefined){
+        if (key === undefined) {
           return
         }
         let idx = loseloseCode(key);
         let linkedList = this.table[idx];
-        if(linkedList){
+        if (linkedList) {
           let current = linkedList.getHead();
-          while(current){
+          while (current) {
             let ele = current.element;
-            if(ele.key===key){
+            if (ele.key === key) {
               return ele.value
             }
             current = current.next
@@ -1048,6 +1048,52 @@
       }
       return hash % 37
     }
+  </script>
+
+
+  <script>
+    var spiralOrder = function (matrix) {
+      if (!matrix.length) return [];
+      let dirs = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+      let d = 0; //0~3
+      let x = -1;
+      let y = 0;
+      let result = [];
+      //XXX: why martix.length should -1
+      let lenMatrix = [matrix[0].length, matrix.length - 1];
+      //当m,n中有一个已经全部输出之后退出循环
+      while (lenMatrix[d % 2] > 0) {
+        for (let i = 0; i < lenMatrix[d % 2]; i++) {
+          x = x + dirs[d][1];
+          y = y + dirs[d][0];
+          result.push(matrix[y][x]);
+        }
+        lenMatrix[d % 2]--;
+        console.log(lenMatrix)
+        d = (d + 1) % 4;
+      }
+      return result;
+    };
+    // console.log(spiralOrder([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]))
+
+    var canJump = function (nums) {
+      let target = nums.length - 1;
+      if (target <= 0) {
+        return true
+      }
+      let curFarest = 0;
+      let max = -Infinity;
+      for (let i = 0; i < target; i++) {
+        max = Math.max(max, nums[i] + i);
+        console.log(i,curFarest,max)
+        if (i === curFarest) {
+          curFarest = max;
+          if (curFarest >= target) return true
+        }
+      }
+      return false
+    };
+    console.log(canJump([2,5,0,0]))
   </script>
 </body>
 
