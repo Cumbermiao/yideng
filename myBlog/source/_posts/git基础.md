@@ -168,3 +168,6 @@ ssh -T git@github.com
 ssh -T -p 22 git@ssh.github.com
 ssh -T -p 443 git@ssh.github.com
 ```
+
+## ssh 命令
+- ```ssh-agent``` 启动 

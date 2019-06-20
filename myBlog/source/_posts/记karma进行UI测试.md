@@ -22,3 +22,21 @@ npm i karma-jasmine karma-chrome-launcher jasmine-core -D
 可以全局安装 `karma-cli` 就能直接使用 `karma`命令了。
 
 ### genrate config file
+使用命令 `karma init` 生成配置文件。
+```
+
+```
+
+## UI测试（backstopjs）
+
+### install 
+```npm i backstopjs -g```
+会下载 puppeteer
+
+### 基础命令
+- ```backstop init``` 生成一个新的实例，包含配置文件。
+
+- ```backstop test``` 测试 scenarios.url 中的页面，生成页面快照并对比 ```paths.btmaps_reference``` 中对应图片。
+
+- ```backstop approve``` 将上一次测试生成的快照作为衡量图片，下次对比时与此快照对比。
+
